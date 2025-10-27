@@ -1,4 +1,5 @@
-from .words import *
+from .my_words import *
+from .my_io import *
 
 def init_state(secret: tuple, max_tries: int):
     my_dict = {
@@ -37,6 +38,14 @@ def render_display(state: dict) -> str:
                
 def render_summary(state: dict) -> str:
     return f'the secret word is {state["secret"]}, your guesses is {state["guessed"]}'
+
+def update_guessed(state: dict, chr: str) -> None:
+    state["guessed"].add(chr)
+
+def update_wrong_guessed(state: dict, chr: str) -> None:
+    state["wrong_guesses"] += 1
+
+
 
 
         

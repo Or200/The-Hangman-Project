@@ -12,7 +12,7 @@ def choose_secret_word(words: list[str]) -> tuple[str, list]:
     for i in range(len(word_choose)):
         display_char.append("_")
     
-    return word_choose, display_char
+    return word_choose.lower(), display_char
 
 
 
