@@ -1,5 +1,4 @@
-from .my_words import *
-from .my_io import *
+from .words import *
 
 def init_state(secret: tuple, max_tries: int):
     my_dict = {
@@ -7,7 +6,7 @@ def init_state(secret: tuple, max_tries: int):
         "display": secret[1],
         "guessed": set(),
         "wrong_guesses": 0,
-        "max tries": max_tries
+        "max_tries": max_tries
     }
     return my_dict
 
