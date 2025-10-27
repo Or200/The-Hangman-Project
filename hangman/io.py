@@ -1,3 +1,4 @@
+from .game import *
 
 def prompt_guess() -> str:
     while True:
@@ -9,3 +10,9 @@ def prompt_guess() -> str:
 def print_status(state: dict) -> None:
     print(f"your word is {"".join(state["display"])}, your guesses is {state["guessed"]}, your Remaining tries is {state["max tries"] - state["wrong_guesses"]}")
 
+def print_result(state: dict) -> None:
+    if is_won():
+        print("YOU WIN")
+    else:
+        print("YOU LOSE")
+    print(f"The currect word is {state["secret"]}, your guess word is {"".join(state["display"])}, your guesses is {state["guessed"]}, your Remaining tries is {state["max tries"] - state["wrong_guesses"]}")
