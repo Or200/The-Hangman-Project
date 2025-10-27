@@ -4,7 +4,7 @@ def init_state(secret: tuple, max_tries: int):
     my_dict = {
         "secret": secret[0],
         "display": secret[1],
-        "guessed": set("a"),
+        "guessed": set(),
         "wrong_guesses": 0,
         "max tries": max_tries
     }
@@ -35,6 +35,10 @@ def render_display(state: dict) -> str:
     state["display"] = new_display
 
                
+def render_summary(state: dict) -> str:
+    return f'the secret word is {state["secret"]}, your guesses is {state["guessed"]}'
+
+
         
 
 
